@@ -1,0 +1,144 @@
+.weatherCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  padding: 25px 15px;
+  margin: 20px;
+  width: 310px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 20px;
+  animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
+  color: #382e64;
+  transition: all 0.15s ease-in;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    position: relative;
+    top: -2px;
+    @media (max-width: 768px) {
+      top: 0;
+    }
+  }
+
+  @media (max-width: 450px) {
+    max-width: 270px;
+  }
+}
+
+.cardTitleContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  position: relative;
+  left: 12px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardCloseContainer {
+  position: relative;
+  top: -2px;
+  height: 25px;
+  width: 25px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.closeImg {
+  height: 25px;
+  opacity: 0.9;
+}
+
+.cityName {
+  overflow: hidden;
+  max-width: 200px;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 8px;
+}
+
+.countryName {
+  flex: 1 1 auto;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.temperatureContainer {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.temperatureMetric {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.temperatureMetric::after {
+  content: '°';
+  position: absolute;
+  top: 0;
+  right: -13px;
+}
+
+.minMaxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.weatherCondition {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  left: 4px;
+}
+
+.maxText {
+  color: #FF0070;
+}
+
+.minText {
+  color: #00FF9B;
+}
+
+.maxText, 
+.minText {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.maxTemperature, 
+.minTemperature {
+  text-align: center;
+  font-size: 25px;
+  margin: 5px 0;
+  position: relative;
+}
+.maxTemperature::after, 
+.minTemperature::after {
+  content: '°';
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
