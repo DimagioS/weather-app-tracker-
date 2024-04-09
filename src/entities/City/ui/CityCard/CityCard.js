@@ -1,14 +1,15 @@
+import { memo } from 'react';
 import styles from './CityCard.module.scss';
 // import closeCard from './close-card.svg';
 
-export const CityCard = (props) => {
-  const { name, country } = props;
+export const CityCard = memo((props) => {
+  const { name, weather } = props;
 
   return (
     <section className={styles.weatherCard}>
       <div className={styles.cardTitleContainer}>
         <span className={styles.cityName}>{name}</span>
-        <span className={styles.countryName}>{country}</span>
+        {/* <span className={styles.countryName}>{country}</span> */}
         <div className={styles.cardCloseContainer}>
           {/* <div className={styles.cardCloseImg}> */}
             {/* <img src={closeCard} className={styles.closeImg} alt="Close" /> */}
@@ -31,4 +32,4 @@ export const CityCard = (props) => {
       </section>
     </section>
   );
-}
+});
