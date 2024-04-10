@@ -1,4 +1,34 @@
+.cardList {
+  display: flex;
+  align-items: start;
+  margin-top: 40px;
+  flex-direction: column-reverse;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 870px) {
+    justify-content: center;
+  }
+}
+
+.cityCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  padding: 25px 15px;
+  margin: 20px;
+  width: 310px;
+  border-radius: 20px;
+  animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
+  color: #382e64;
+  transition: all 0.15s ease-in;
+  position: relative;
+  top: 0;
 }

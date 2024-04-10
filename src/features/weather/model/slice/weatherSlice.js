@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { loadCitiesFromLocalStorage, saveCitiesToLocalStorage } from '../services/weatherStorageService';
 import { fetchWeatherForCity } from '../services/weatherService';
 
 const initialState = {
   data: [],
+  cities: loadCitiesFromLocalStorage(),
   loading: false,
   error: null,
 };
@@ -10,7 +12,22 @@ const initialState = {
 const weatherSlice = createSlice({
   name: 'weather',
   initialState,
-  reducers: {},
+  reducers: {
+    addCity: (state, action) => {
+      state.cities.push(action.payload);
+      saveCitiesToLocalStorage(state.cities);
+    },
+    removeCity: (state, action) => {
+      state.cities = state.cities.filter(city => city !== action.payload);
+      state.data = state.data.filter(city => city.name !== action.payload);
+      saveCitiesToLocalStorage(state.cities);
+    },
+    removeAllCity: state => {
+      state.cities = [];
+      state.data = [];
+      saveCitiesToLocalStorage(state.cities);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchWeatherForCity.pending, (state) => {

@@ -1,26 +1,22 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { CityList } from "../entities/City";
-import { fetchWeatherForCity } from "../features/weather";
-import { useDispatch } from "react-redux";
-
-const cities = [
-  { id: 1, name: 'Москва' },
-  { id: 2, name: 'Белград' },
-  { id: 3, name: 'София' },
-  { id: 4, name: 'Подгорица' },
-];
+import { CityList } from "entities/City";
+import { AddCitiesInput } from "features/cities";
+import { fetchWeatherForCity, getWeatherCities } from "features/weather";
 
 const App = () => {
   const dispatch = useDispatch();
-
+  const cities = useSelector(getWeatherCities);
+  
   useEffect(() => {
     cities.forEach(city => {
-      dispatch(fetchWeatherForCity(city.name));
+      dispatch(fetchWeatherForCity(city));
     });
   }, [dispatch]);
 
   return (
     <div className="App">
+      <AddCitiesInput />
       <CityList />
     </div>
   );

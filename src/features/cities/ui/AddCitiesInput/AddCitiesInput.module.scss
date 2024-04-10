@@ -1,0 +1,60 @@
+.searchCityWrapper {
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
+}
+
+.searchCityInput {
+  width: 100%;
+  padding: 20px 0 20px 25px;
+  border-radius: 3rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2rem 0.15rem rgba(0, 0, 255, 0.1);
+  font-size: 1rem;
+  color: #131F69;
+  text-transform: uppercase;
+}
+
+.searchCityInput::placeholder {
+  font-size: 14px;
+  color: #131F69;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.searchCityBtn {
+  cursor: pointer;
+  position: absolute;
+  background-color: #31feae;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  right: -32px;
+  top: -6px;
+  outline: none;
+  border: none;
+  z-index: 5;
+  box-shadow: 0 0 2rem 0.15rem rgba(0, 0, 255, 0.1);
+}
+
+.searchIcon {
+  height: 50%;
+  width: 50%;
+}
+
+.cityError {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #4500ff;
+}
